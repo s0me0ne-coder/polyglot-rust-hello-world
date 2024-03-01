@@ -9,7 +9,8 @@ class Demo {
         Source source = Source.newBuilder("llvm", file).build();
 	polyglot.eval(source);
         Value cpart = polyglot.getBindings("llvm").getMember("hello");
-	cpart.execute();
+	int a = cpart.execute(10).asInt();
+	System.out.println(a);
     }
 }
 
